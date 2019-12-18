@@ -1,5 +1,6 @@
 package repository;
 
+import model.Hospital;
 import model.Patient;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -26,6 +27,11 @@ public class PatientDTO {
     }
 
     public void addNewPatient( Patient newPatient){
+        int hospitalID = newPatient.getHospital().getId();
+        if(hospitalID != 0){
+            Hospital hospital = getHospitalByID(hospitalID);
+            newPatient.setHospital(hospital);
+        }
         sessionFactory.getCurrentSession().save(newPatient);
     }
 
@@ -98,6 +104,12 @@ public class PatientDTO {
         query.setFirstResult((page - 1) * size);
         query.setMaxResults(size);
         return query;
+    }
+
+    public Hospital getHospitalByID(int id) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from Hospital where id = :id");
+        query.setInteger("id", id);
+        return (Hospital) query.uniqueResult();
     }
 
 }
