@@ -130,6 +130,17 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "getPatientByHospital",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -504,6 +515,73 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": \"Chen\",\n\t\"password\": \"Chen1s\",\n\t\"server\": \"hahso\",\n\t\"hospital\": {\n\t\t\"id\": 1\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/users",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/users/login?username=Chen&password=Chen",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"users",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Chen"
+								},
+								{
+									"key": "password",
+									"value": "Chen"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
@@ -530,7 +608,7 @@
 	],
 	"variable": [
 		{
-			"id": "c4ee5d19-4bb9-4318-9280-d070a9149d89",
+			"id": "0ac4f16a-86a4-45f3-84d4-397c6e8d8d36",
 			"key": "web",
 			"value": "localhost:8080",
 			"type": "string"
