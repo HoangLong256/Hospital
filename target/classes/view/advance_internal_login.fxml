@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdvanceInternalLogin">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="600.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="736.0" text="SIR JOHN MONASH HOSPITAL">
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="627.0" text="INTERNAL Log in">
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="920.0" text="Sign in">
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="740.0" text="Please use your hospital employee name and password to log in the VisitDerm System">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </Label>
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="976.0" text="Display error here">
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox prefHeight="0.0" prefWidth="600.0">
+                    <children>
+                        <Label prefWidth="75.0" text="User name">
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <TextField />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="200.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="9.0" prefWidth="400.0">
+                    <children>
+                        <Label prefWidth="75.0" text="Password">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
+                        <TextField />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="200.0" />
+                    </VBox.margin>
+                </HBox>
+            <HBox prefHeight="0.0" prefWidth="600.0">
+               <children>
+                  <Label prefWidth="75.0" text="Server">
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox promptText="Dermatologists" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+                <Button mnemonicParsing="false" text="Log in">
+                    <VBox.margin>
+                        <Insets left="350.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

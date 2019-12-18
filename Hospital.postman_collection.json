@@ -1,0 +1,540 @@
+{
+	"info": {
+		"_postman_id": "0995d996-4332-4806-b139-addea34bb510",
+		"name": "Hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "getPatient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/patients",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPatient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"A\",\n\t\"lastName\" : \"B\",\n\t\"title\" : \"Mr\",\n\t\"birthday\": \"1997-01-01\",\n\t\"gender\": \"male\",\n\t\"streetAddress\": \"Nguyen Van Linh\",\n\t\"maritalStatus\" : \"single\",\n\t\"suburb\": \"Quan 7\",\n\t\"country\": \"HCM, Vietnam\",\n\t\"homePhone\": \"123456\",\n\t\"officePhone\": \"123\",\n\t\"mobilePhone\": \"123\",\n\t\"faxNumber\": \"123\",\n\t\"occupation\": \"Teacher\",\n\t\"nextToKin\": \"Asv\",\n\t\"contactNumber\": \"123\",\n\t\"postCode\": 123\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/patients",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePatient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"lastName\": \"Nguyen\",\n        \"firstName\": \"Van A\",\n        \"title\": \"Mr\",\n        \"birthday\": \"1997-01-01\",\n        \"gender\": \"male\",\n        \"streetAddress\": \"Nguyen Van Linh\",\n        \"maritalStatus\": \"single\",\n        \"suburb\": \"quan 7\",\n        \"country\": \"HCM, Vietnam\",\n        \"homePhone\": 123456,\n        \"officePhone\": 123,\n        \"mobilePhone\": 123,\n        \"faxNumber\": 123,\n        \"occupation\": \"Teacher\",\n        \"nextToKin\": \"Asv\",\n        \"contactNumber\": 123,\n        \"postCode\": 123\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/patients/update/1",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"patients",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatientByLastName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/patients/searchByLastName/B",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"patients",
+								"searchByLastName",
+								"B"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatientByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/patients/searchByID/1",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"patients",
+								"searchByID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "addHospital",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Cho Ray\",\n\t\"city\": \"HCM\",\n\t\"country\": \"Vietnam\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/hospitals",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"hospitals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHospitals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/hospitals",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"hospitals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/hospitals/searchByCity/HCM",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"hospitals",
+								"searchByCity",
+								"HCM"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCountry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/hospitals/searchByCountry/Vietnam",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"hospitals",
+								"searchByCountry",
+								"Vietnam"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "VisitRecord",
+			"item": [
+				{
+					"name": "getAllVisits",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/visits",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"visits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addVisitWithNewPatient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"visitDate\": \"2012-06-23\",\n\t\"visitTime\": \"12:12\",\n\t\"patient\":{\n\t\t\"lastName\": \"Minh\"\n\t},\n\t\"hospital\":{\n\t\t\"id\": 1\n\t},\n\t\"doctor\": \"Minh\",\n\t\"information\": \"nothing\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/visits",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"visits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addVisitWithReturningPatient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"visitDate\": \"2012-06-23\",\n\t\"visitTime\": \"12:12\",\n\t\"patient\":{\n\t\t\"id\": 1\n\t},\n\t\"hospital\":{\n\t\t\"id\": 1\n\t},\n\t\"doctor\": \"Minh\",\n\t\"information\": \"nothing\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/visits",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"visits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/visits/searchByID/1",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"visits",
+								"searchByID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchByPatientID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/visits/searchByPatientID/1",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"visits",
+								"searchByPatientID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Lesion",
+			"item": [
+				{
+					"name": "addLesion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"date\": \"1990-09-12\",\n\t\"time\": \"12:12\",\n\t\"location\": \"hand\",\n\t\"size\": \"2cm\",\n\t\"visitLog\":{\n\t\t\"id\": 3\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/lesions",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"lesions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLesions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/lesions",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"lesions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLesionsByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/lesions/searchByID/1",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"lesions",
+								"searchByID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "LesionHistory",
+			"item": [
+				{
+					"name": "getLesionHistory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/lesionHistory",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"lesionHistory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addLesionHistory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"lesion\":{\n\t\t\"id\": 1\n\t},\n\t\"url\": \"www.a.com\",\n\t\"note\": \"nothing\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/lesionHistory",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"lesionHistory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLesionHistoryByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/lesionHistory/searchByID/1",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"lesionHistory",
+								"searchByID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b9c7f49e-4511-480e-97ac-5c14a2e703f4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5ded6910-84e6-4c47-b1e4-1abb790dfe70",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c4ee5d19-4bb9-4318-9280-d070a9149d89",
+			"key": "web",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
