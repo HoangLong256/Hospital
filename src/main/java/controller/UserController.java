@@ -27,6 +27,12 @@ public class UserController {
         return userService.getUser(username, password);
     }
 
+    @RequestMapping(path = "users/advancedLogin", method = RequestMethod.GET)
+    public Employee advancedLogin (@RequestParam String username,
+                                   @RequestParam String password,
+                                   @RequestParam String server){
+        return userService.advancedLogin(username,password,server);
+    }
 
 
 

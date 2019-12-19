@@ -22,4 +22,7 @@ public class UserService {
         return userDTO.getUser(username, password);
     }
 
+    public Employee advancedLogin (String username, String password, String server){
+        return userDTO.advancedLogin(username,password,server);
+    }
 }

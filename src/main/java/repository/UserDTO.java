@@ -33,9 +33,17 @@ public class UserDTO {
     }
 
     public Employee getUser(String username, String password) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from Employee where lower(username) = lower(:username) and lower(password) = lower(:password)");
+        Query query = sessionFactory.getCurrentSession().createQuery("from Employee where lower(username) = lower(:username) and password = :password");
         query.setString("password", password);
         query.setString("username", username);
+        return (Employee) query.uniqueResult();
+    }
+
+    public Employee advancedLogin(String username, String password, String server ){
+        Query query = sessionFactory.getCurrentSession().createQuery("from Employee where lower(username) = lower(:username) and password = : password and lower(server) = lower(:server)");
+        query.setString("password", password);
+        query.setString("username", username);
+        query.setString("server", server);
         return (Employee) query.uniqueResult();
     }
 
