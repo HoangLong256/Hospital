@@ -1,6 +1,7 @@
 package repository;
 
 import model.Lesion;
+import model.Patient;
 import model.VisitLog;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -30,6 +31,12 @@ public class LesionDTO   {
             VisitLog visitLog = findVisitLogByID(visitID);
             lesion.setVisitLog(visitLog);
         }
+
+        int patientID = lesion.getPatient().getId();
+        if(patientID  != 0){
+            Patient patient = getPatientByID(patientID);
+            lesion.setPatient(patient);
+        }
         sessionFactory.getCurrentSession().save(lesion);
     }
 
@@ -48,6 +55,8 @@ public class LesionDTO   {
         updatedLesion.setSize(lesion.getSize());
         updatedLesion.setTime(lesion.getTime());
         updatedLesion.setLocation(lesion.getLocation());
+        updatedLesion.setPatient(getPatientByID(lesion.getPatient().getId()));
+        updatedLesion.setStatus(lesion.getStatus());
         sessionFactory.getCurrentSession().update(updatedLesion);
     }
 
@@ -80,5 +89,11 @@ public class LesionDTO   {
         query.setFirstResult((page - 1) * size);
         query.setMaxResults(size);
         return query;
+    }
+
+    public Patient getPatientByID(int id) {
+        Query query = sessionFactory.getCurrentSession().createQuery("from Patient where id = :id");
+        query.setInteger("id", id);
+        return (Patient) query.uniqueResult();
     }
 }

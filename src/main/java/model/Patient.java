@@ -6,6 +6,7 @@ import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import javax.persistence.CascadeType;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -71,6 +72,11 @@ public class Patient {
 
     @Column
     private int postCode;
+
+    @OneToMany(mappedBy = "patient", cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.EAGER)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @JsonIgnore
+    private List<Lesion> lesions = new ArrayList<>();
 
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)

@@ -31,4 +31,8 @@ public class VisitLogService {
     }
 
     public void deleteVisitLog(int visitID) {visitLogDTO.deleteVisitLog(visitID);}
+
+    public void updateVisit(VisitLog visitLog, int id){
+        visitLogDTO.updatedVisit(visitLog, id);
+    }
 }

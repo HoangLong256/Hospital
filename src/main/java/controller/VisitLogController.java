@@ -39,6 +39,11 @@ public class VisitLogController {
         return visitLogService.searchByDate(date,page,size);
     }
 
+    @RequestMapping(path="visits/update/{id}", method = RequestMethod.PUT)
+    public void updatePatient(@RequestBody VisitLog visitLog, @PathVariable int id) {
+        visitLogService.updateVisit(visitLog, id);
+    }
+
     @RequestMapping(path = "visits/searchByPatientID/{id}", method = RequestMethod.GET)
     public List<VisitLog> searchByPatientID(@PathVariable int id,
                                             @RequestParam(defaultValue = "1")int page,

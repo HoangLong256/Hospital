@@ -39,7 +39,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\": \"A\",\n\t\"lastName\" : \"B\",\n\t\"title\" : \"Mr\",\n\t\"birthday\": \"1997-01-01\",\n\t\"gender\": \"male\",\n\t\"streetAddress\": \"Nguyen Van Linh\",\n\t\"maritalStatus\" : \"single\",\n\t\"suburb\": \"Quan 7\",\n\t\"country\": \"HCM, Vietnam\",\n\t\"homePhone\": \"123456\",\n\t\"officePhone\": \"123\",\n\t\"mobilePhone\": \"123\",\n\t\"faxNumber\": \"123\",\n\t\"occupation\": \"Teacher\",\n\t\"nextToKin\": \"Asv\",\n\t\"contactNumber\": \"123\",\n\t\"postCode\": 123\n}",
+							"raw": "{\n\t\"firstName\": \"A\",\n\t\"lastName\" : \"B\",\n\t\"title\" : \"Mr\",\n\t\"birthday\": \"1997-01-01\",\n\t\"gender\": \"male\",\n\t\"streetAddress\": \"Nguyen Van Linh\",\n\t\"maritalStatus\" : \"single\",\n\t\"suburb\": \"Quan 7\",\n\t\"country\": \"HCM, Vietnam\",\n\t\"homePhone\": \"123456\",\n\t\"officePhone\": \"123\",\n\t\"mobilePhone\": \"123\",\n\t\"faxNumber\": \"123\",\n\t\"occupation\": \"Teacher\",\n\t\"nextToKin\": \"Asv\",\n\t\"contactNumber\": \"123\",\n\t\"postCode\": 123,\n\t\"hospital\": {\n\t\t\"id\": 2\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -133,6 +133,25 @@
 				},
 				{
 					"name": "getPatientByHospital",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{web}}/patients/getPatientsByHospitalID/1",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"patients",
+								"getPatientsByHospitalID",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVisit",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -362,6 +381,17 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "updateVisit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -383,7 +413,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"date\": \"1990-09-12\",\n\t\"time\": \"12:12\",\n\t\"location\": \"hand\",\n\t\"size\": \"2cm\",\n\t\"visitLog\":{\n\t\t\"id\": 3\n\t}\n}",
+							"raw": "{\n\t\"date\": \"1990-09-12\",\n\t\"time\": \"12:12\",\n\t\"location\": \"hand\",\n\t\"status\": \"asd\",\n\t\"doctor\": \"sdasd\",\n\t\"size\": \"2cm\",\n\t\"visitLog\":{\n\t\t\"id\": 1\n\t},\n\t\"patient\": {\n\t\t\"id\": 1\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -433,6 +463,41 @@
 								"lesions",
 								"searchByID",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLesion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"date\": \"1990-09-12\",\n\t\"time\": \"12:12\",\n\t\"location\": \"handsd\",\n\t\"status\": \"asd\",\n\t\"doctor\": \"sdasd\",\n\t\"size\": \"2cm\",\n\t\"visitLog\":{\n\t\t\"id\": 1\n\t},\n\t\"patient\": {\n\t\t\"id\": 1\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{web}}/lesions/update/3",
+							"host": [
+								"{{web}}"
+							],
+							"path": [
+								"lesions",
+								"update",
+								"3"
 							]
 						}
 					},
@@ -608,7 +673,7 @@
 	],
 	"variable": [
 		{
-			"id": "0ac4f16a-86a4-45f3-84d4-397c6e8d8d36",
+			"id": "488809ac-c39b-4fd0-b5bb-ffd6fa19f680",
 			"key": "web",
 			"value": "localhost:8080",
 			"type": "string"

@@ -42,12 +42,27 @@ public class VisitLogDTO {
 //        }else {
 //            System.out.println("Nothing");
 //        }
-
-
-
-
         this.sessionFactory.getCurrentSession().save(visitLog);
         return visitLog.getId();
+    }
+
+
+    public int updatedVisit(VisitLog visitLog, int id){
+        Query query = sessionFactory.getCurrentSession().createQuery("from VisitLog where id = :id");
+        query.setInteger("id", id);
+        VisitLog updatedVisit = (VisitLog) query.uniqueResult();
+        if(visitLog.getHospital().getId() != 0){
+            updatedVisit.setHospital(getHospitalByID(visitLog.getHospital().getId()));
+        }
+        if(visitLog.getPatient().getId() != 0){
+            updatedVisit.setPatient(getPatientByID(visitLog.getPatient().getId()));
+        }
+        updatedVisit.setVisitDate(visitLog.getVisitDate());
+        updatedVisit.setVisitTime(visitLog.getVisitTime());
+        updatedVisit.setDoctor(visitLog.getDoctor());
+        updatedVisit.setInformation(visitLog.getInformation());
+        sessionFactory.getCurrentSession().update(updatedVisit);
+        return updatedVisit.getId();
     }
 
 

@@ -34,6 +34,16 @@ public class Lesion {
     @Column
     private String size;
 
+    @Column
+    private String status;
+
+    @Column
+    private String doctor;
+
+    @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    private Patient patient;
+
     @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private VisitLog visitLog;
@@ -87,5 +97,29 @@ public class Lesion {
 
     public void setVisitLog(VisitLog visitLog) {
         this.visitLog = visitLog;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 }
