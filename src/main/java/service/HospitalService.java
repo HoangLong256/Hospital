@@ -39,5 +39,5 @@ public class HospitalService {
         hospitalDTO.deleteHospital(id);
     }
 
-
+    public void getByName(String name){ hospitalDTO.getHospitalByName( name);}
 }

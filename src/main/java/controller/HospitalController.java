@@ -34,6 +34,11 @@ public class HospitalController {
         return hospitalService.getHospitalByID(id);
     }
 
+    @RequestMapping(path = "hospitals/searchByID/{name}", method = RequestMethod.GET)
+    public Hospital searchByID(@PathVariable String name) {
+        return hospitalService.getByName(name);
+    }
+
     @RequestMapping(path = "hospitals/searchByCountry/{country}", method = RequestMethod.GET)
     public List<Hospital> searchByCountry(@PathVariable String country,
                                        @RequestParam(defaultValue = "1")int page,

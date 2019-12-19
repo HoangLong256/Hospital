@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30d1ff5f-ed5f-4150-8476-b3b203a40da3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hospital.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.postman_collection.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/VisitLogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/VisitLogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Lesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Lesion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Patient.java" afterDir="false" />
@@ -88,15 +89,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/HospitalController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-252">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/repository/VisitLogDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="61">
@@ -105,11 +97,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/repository/LesionDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-157">
               <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/LesionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-236">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -290,7 +291,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576743574678" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576743702258" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -337,12 +338,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576565571829</updated>
-      <workItem from="1576661190513" duration="8499000" />
+      <workItem from="1576661190513" duration="8838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8499000" />
+    <option name="totallyTimeSpent" value="8838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="0" />
@@ -702,6 +703,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-157">
           <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LesionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-236">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>

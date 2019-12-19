@@ -55,6 +55,12 @@ public class HospitalDTO {
         return (Hospital) query.uniqueResult();
     }
 
+    public Hospital getHospitalByName (String name){
+        Query query = sessionFactory.getCurrentSession().createQuery("from Hospital where name = :name");
+        query.setString("name", name);
+        return (Hospital) query.uniqueResult();
+    }
+
     public List<Hospital> getHospitalByCountry(String country, int page, int size) {
         Query query = sessionFactory.getCurrentSession().createQuery("from Hospital where lower(country) like lower(:country)");
         query.setString("country", "%"+country+"%");
